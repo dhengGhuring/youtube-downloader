@@ -12,30 +12,35 @@ export const App = () => {
     setCurrentLink(link);
   };
   return (
-    <div className="flex w-full flex-col" style={{ height: "100vh" }}>
-      <div className="my-5 mx-3 flex flex-row gap-1">
+    <div className="flex w-full flex-col my-3">
+      <h1 className="text-center text-5xl font-bold">
+        Video Downloader Tercepat
+      </h1>
+      <div className="my-5 mx-3 flex flex-row gap-1 justify-center">
         <input
           type="text"
-          className="border-solid border-2 border-sky-500 w-full rounded-xl p-2"
+          className="border-solid border-2 border-sky-500 w-96 rounded-xl p-2"
           placeholder="Paste linknya disini"
           onChange={handleChangeInput}
         />
         <button
-          className="bg-sky-500 rounded-xl p-2 text-white"
+          className="bg-sky-500 rounded-xl p-2 text-black"
           onClick={handleSubmit}
         >
-          submit
+          Convert!
         </button>
       </div>
-      <iframe
-        id="widgetApi"
-        src={`https://convert2mp3s.com/api/widget?url=${currentLink}`}
-        width="100%"
-        height="100%"
-        allowtransparency="true"
-        style={iframeStyle}
-      ></iframe>
-      <p className="text-center">Made with ❤️ by DhengGhuring</p>
+      <div className="flex flex-col h-full">
+        <iframe
+          id="widgetApi"
+          src={`https://convert2mp3s.com/api/widget?url=${currentLink}`}
+          width="100%"
+          height="600px"
+          allowtransparency="true"
+          style={iframeStyle}
+        ></iframe>
+        <p className="text-center">Made with ❤️ by DhengGhuring</p>
+      </div>
     </div>
   );
 };
